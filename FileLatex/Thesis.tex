@@ -1,0 +1,135 @@
+% \documentclass[12pt,a4paper]{extbook}
+\documentclass[a4paper]{extbook}
+
+\usepackage{scrextend}
+\changefontsizes[15pt]{13pt}
+% -------- Border Cover
+\usepackage {fancybox} % Use this package.
+\usepackage{afterpage} % Insert the blank page
+\def\blankpage{%
+      \clearpage%
+      \thispagestyle{empty}%
+      \addtocounter{page}{-1}%
+      \null%
+      \clearpage}
+% -------- Header and Footer
+
+% \usepackage{lastpage}
+% \usepackage{scrlayer-scrpage}
+% \clearscrheadfoot
+% \ohead{\headmark}
+% \usepackage{calc}
+% \cfoot{\thepage / \pageref{LastPage}}
+
+
+% -------font and Paragraph
+
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily{\uctimes}{Times New Roman}[
+  Mapping=uc-text
+]
+
+% -------------- Stype Itemize 
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+% \setlist[itemize]{itemsep=10pt, label={--}}
+% \setlist[itemize]{itemsep=10pt}
+\setlist{  
+  listparindent=\parindent,
+  parsep=0pt,
+  wide=0pt,
+}
+% ------------ Figure Latex
+\usepackage{graphicx,caption,float}
+% --------- Chapter style  Font the section and subsection and spacing section
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\filcenter\normalfont\Large\bfseries}
+    % {\MakeUppercase{\chaptertitlename}\ \thechapter}
+    % {5pt}
+    % {}
+    {\MakeUppercase{\chaptertitlename}\ \thechapter}
+    {1pt}
+    {\MakeUppercase}
+    [\vspace{.5ex}\titlerule]
+
+    % ------ 
+    \setcounter{secnumdepth}{4}
+    
+    % ------ 
+    \titleformat{\section}
+    {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+    \titleformat{\subsection}
+    {\normalfont\fontsize{12}{15}\bfseries}{\thesubsection}{1em}{}
+    \titleformat{\subsubsection}
+    {\normalfont\fontsize{12}{15}\bfseries}{\thesubsubsection}{1em}{}
+    \titleformat{\paragraph}
+    {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+    \titlespacing*{\paragraph}
+    {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+    
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+\titlespacing*{\section}{0pt}{0pt}{1pt}
+\titlespacing*{\subsection}{0pt}{0pt}{1pt}
+\titlespacing*{\subsubsection}{0pt}{0pt}{1pt}
+
+% --------- Setting Paragraph
+\usepackage{indentfirst}
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\parskip}{0.3\baselineskip}%set space between paragraphs
+
+% ------------- math 
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[math-style = upright]{unicode-math} %Math equations non italic: https://tex.stackexchange.com/questions/318087/math-equations-non-italic
+
+
+
+% --------------- Ki hieu vat li + hoa hoc
+\usepackage{physics,mhchem}
+\usepackage{siunitx}
+
+% --------------- Bang Table
+\usepackage{tabularx,ragged2e,booktabs,multirow,longtable}
+\newcolumntype{C}{>{\Centering\arraybackslash}X}
+\usepackage[skip=0.333\baselineskip]{caption} % optional
+
+
+% -------------------------------------------------------
+\usepackage[a4paper,left=3.5cm, right=2cm,top=3.5cm,bottom=3cm,asymmetric]{geometry}
+
+% ----------------Table of Contents ToC -------------------------------
+\usepackage{tocstyle}
+\usetocstyle{standard}
+
+
+% ----------------Tai lieu tham khao -------------------------------
+% --------------- Bookmark, Reference,  Bibligraphy
+\usepackage{bookmark,hyperref}
+\usepackage[sorting=none]{biblatex}
+\addbibresource{Chapter/Reference.bib}
+\nocite{*}
+% ------------------ TIeu de
+\title{Khoá luận 2019}
+\author{VU QUANG NGUYEN}
+
+% ---------------------------Start------------------------------------------------------
+\begin{document}
+% \input{Chapter/BookCover_Page1.tex}
+% \input{Chapter/BookCover_Page2.tex}
+% \input{Chapter/Foreground.tex}
+% \input{Chapter/Chuong1.tex}
+% \input{Chapter/Chuong2.tex}
+\input{Chapter/Test.tex}
+% \input{Chapter/Chuong3.tex}
+% \input{Chapter/Chuong4.tex}
+% --------- Tai Lieu Tham Khao 
+\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
+\input{Chapter/ListofBibliography.tex}
+\end{document}
+
+

@@ -1,0 +1,33 @@
+\clearpage
+\tableofcontents
+\clearpage
+
+% -------------------Danh so trang La Ma
+\pagenumbering{roman}
+% -------------------Danh sach bang bieu
+
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\clearpage
+% -------------------Danh sach hinh ve
+
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\clearpage
+
+% -------------------Danh sach chu viet tat
+
+\addcontentsline{toc}{chapter}{Danh mục các từ viết tắt}
+\input{Chapter/ListofAbbrivation.tex}
+
+% -------------------Loi cam on va mo dau
+\addcontentsline{toc}{chapter}{Lời cảm ơn }
+\input{Chapter/LoiCamOn.tex}
+
+\addcontentsline{toc}{chapter}{Lời mở đầu }
+\input{Chapter/LoiMoDau.tex}
+\mainmatter
+
+% -------------------Danh so trang Roman
+\pagestyle{plain}
+\clearpage
